@@ -13,5 +13,7 @@ public class Year {
 		System.out.println("生まれた日を入力してください:");
 		int day = scan.nextInt();
 		System.out.println("あなたの生年月日は" + year + "年" + month + "月" + day + "日です");
+
+		scan.close();
 	}
 }
