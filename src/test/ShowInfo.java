@@ -1,7 +1,7 @@
 package test;
 
 public class ShowInfo {
-	public void showInfo(MyName account) {
+	public void showInfo(Myname account) {
 		System.out.println("------------------");
 		System.out.println("名前:" + account.getName());
 		System.out.println("年齢:" + account.getAge());

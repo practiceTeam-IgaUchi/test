@@ -39,7 +39,7 @@ public class Myname {
 	}
 
 	// ② 処理（受け取りメソッド）
-	public void inputProfile() {
+	public Myname() {
 
 		// 名前の入力処理
 		System.out.print("名前を入力: ");
@@ -58,6 +58,12 @@ public class Myname {
 		System.out.print("性格を入力: ");
 		String inputPersonality = scanner.next();
 		setPersonality(inputPersonality);
+	}
+
+	public Myname(String name, String age, String personality) {
+		this.name = name;
+		this.age = age;
+		this.personality = personality;
 	}
 
 }
