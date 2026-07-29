@@ -7,7 +7,7 @@ import java.util.concurrent.CancellationException;
 
 public class Test01 {
 	public static void main(String[] args) {
-		SearchIndex search = new SearchIndex();
+		Search search = new Search();
 		ShowInfo show = new ShowInfo();
 		Scanner scan = new Scanner(System.in);
 		
@@ -15,7 +15,9 @@ public class Test01 {
 		
 		List<MyName> accounts = new ArrayList<>();
 		
-		accouts.add(new MyName("吉永歩", 0, "非常に温厚"));
+		accounts.add(new MyName("吉永歩", "0", "非常に温厚"));
+		accounts.add(new MyName("内田りょう", "24", "穏やか"));
+		accounts.add(new MyName("野口柊大", "19", "？"));
 		
 		List<String> numberList = new ArrayList<>();
 		numberList.add("0");
@@ -39,7 +41,7 @@ public class Test01 {
 			System.out.print("タスクを値で入力してください→");
 			command = scan.next();
 			
-			if (numberList.contains(command) {
+			if (numberList.contains(command)) {
 				System.out.println("不正な値です");
 				System.out.println("0-4の値で入力してください");
 				continue;
@@ -54,6 +56,7 @@ public class Test01 {
 				case "1":
 					System.out.println("新規登録");
 					accounts.add(new MyName());
+					break;
 					
 				case "2": //
 					System.out.println("データ修正");
@@ -69,6 +72,8 @@ public class Test01 {
 					
 					System.out.print("修正項目を整数値で入力してください→");
 					String option = scan.next();
+					
+					break;
 					
 					switch (option) {
 					case "0" :
@@ -100,11 +105,12 @@ public class Test01 {
 					int index1 = search.searchIndex();
 					
 					show.showInfo(accounts[index1]);
+					break;
 					
 				case "4":
 					System.out.println("全件表示");
 					for (MyName account : accounts) {
-						show.showInfo(account)
+						show.showInfo(account);
 					}
 			}
 		}
